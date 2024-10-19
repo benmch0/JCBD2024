@@ -1,0 +1,126 @@
+/*
+CSS file for the slideshow.html file
+kept seperate as its easier to keep on top of things
+*/
+
+
+body {
+    background-color: #f8fafc;
+    margin: 0; /* Ensure no margin on body */
+    height: 100vh; /* Make body height full viewport height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Starry background */
+.space-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    animation: glow 3s infinite ease-in-out;
+}
+
+.container {
+    padding: 2rem;
+    max-width: 90%; /* Max width to ensure responsiveness */
+    width: 100%; /* Take full width up to max-width */
+    display: flex; /* Flexbox to center content */
+    justify-content: center; /* Center content */
+    align-items: center; /* Align content in center */
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 600px; /* Set a max width for the card */
+    width: 100%; /* Ensure it takes full width up to max width */
+    border-radius: 0.5rem; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 15 / 15;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    
+    /*-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+    /* scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.2;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+img {
+    border-style: solid;
+    border-width: 10px;
+    border-color: darkslategray;
+    border-radius: 0px;
+}
+
+/*
+Makes sure links that are visited dont go purple
+*/
+a:visited { 
+    text-decoration: none; 
+    color: white; 
+    z-index: 3
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    z-index: 3;
+    font-size: 20px;
+}
+
+p {
+    text-align: right;
+    font-size: 20px;
+    color: white;
+}

@@ -1,0 +1,15 @@
+TODO list for the website:
+
+1. Fix border issue with images
+2. Decide between arrows or the buttons
+3. Add date functionality maybe using the photo names
+4. Maybe add a sentence under each image
+
+
+<img src="JadePhotos/IMG_5152.jpg" alt="Image 1">
+<img src="JadePhotos/IMG_5404.jpg" alt="Image 2">
+<img src="JadePhotos/IMG_5569.JPG" alt="Image 3">
+<img src="JadePhotos/IMG_5868.JPG" alt="Image 4">
+
+<h2 style="padding-bottom: 80px;">Happy 20th Birthday Jade!</h2>  
+<h2 style="padding-bottom: 80px;">Happy 20th Birthday Jade!</h2>             
