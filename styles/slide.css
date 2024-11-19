@@ -48,18 +48,19 @@ body {
     width: 100%; /* Ensure it takes full width up to max width */
     border-radius: 0.5rem; /* Rounded corners */
     overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width of parent container */
+    max-width: 600px; /* Optional: Restrict maximum width */
+    height: auto; /* Adjust height to content */
 }
 
 .slider {
     display: flex;
-    aspect-ratio: 15 / 15;
-    overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    
-    /*-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
-    /* scrollbar-width: none; /* Hide scrollbar Firefox */
+    aspect-ratio: unset; /* Disable fixed aspect ratio */
+    max-height: 100vh; /* Prevent slider from exceeding screen height */
+    overflow-x: auto; /* Ensure smooth scrolling *
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -68,10 +69,13 @@ body {
 }
 
 .slider img {
-    flex: 1 0 100%;
+    flex: 1 0 auto;
+    max-width: 100%; /* Prevent images from exceeding container width */
+    height: auto; /* Maintain aspect ratio */
     scroll-snap-align: start;
     object-fit: cover;
 }
+
 
 .slider-nav {
     display: flex;
@@ -123,4 +127,25 @@ p {
     text-align: right;
     font-size: 20px;
     color: white;
+}
+
+@media (max-width: 768px) { /* For tablets and smaller */
+    .slider-wrapper {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .slider img {
+        object-fit: contain; /* Prevent excessive cropping on small screens */
+    }
+}
+
+@media (max-width: 480px) { /* For phones */
+    .slider-wrapper {
+        padding: 1rem; /* Add padding for smaller devices */
+    }
+
+    .slider img {
+        object-fit: contain; /* Ensure images fit within smaller areas */
+        border-width: 5px; /* Reduce border size for smaller screens */
+    }
 }
